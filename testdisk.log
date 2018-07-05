@@ -1,0 +1,456 @@
+
+
+Mon Jul  2 20:23:49 2018
+Command line: TestDisk
+
+TestDisk 7.0, Data Recovery Utility, April 2015
+Christophe GRENIER <grenier@cgsecurity.org>
+http://www.cgsecurity.org
+OS: Linux, kernel 4.9.0-6-amd64 (#1 SMP Debian 4.9.82-1+deb9u3 (2018-03-02)) x86_64
+Compiler: GCC 6.2
+ext2fs lib: 1.43.4, ntfs lib: libntfs-3g, reiserfs lib: none, ewf lib: none, curses lib: ncurses 6.0
+/dev/sda: LBA, HPA, LBA48, DCO support
+/dev/sda: size       1953525168 sectors
+/dev/sda: user_max   1953525168 sectors
+/dev/sda: native_max 1953525168 sectors
+/dev/sda: dco        1953525168 sectors
+Warning: can't get size for Disk /dev/mapper/control - 0 B - 0 sectors, sector size=512
+Hard disk list
+Disk /dev/sda - 1000 GB / 931 GiB - CHS 121601 255 63, sector size=512 - TOSHIBA MQ01ABD100M, S/N:57KVPE1XT, FW:AX101U
+Disk /dev/mmcblk0 - 32 GB / 29 GiB - CHS 976896 4 16, sector size=512
+
+Partition table type (auto): Intel
+Disk /dev/mmcblk0 - 32 GB / 29 GiB
+Partition table type: Intel
+
+Analyse Disk /dev/mmcblk0 - 32 GB / 29 GiB - CHS 976896 4 16
+Geometry from i386 MBR: head=256 sector=63
+BAD_RS LBA=2048 69614
+FAT32 at 32/0/1
+check_FAT: Unusual media descriptor (0xf0!=0xf8)
+Info: size boot_sector 62519296, partition 62519296
+FAT1 : 36-7665
+FAT2 : 7666-15295
+start_rootdir : 15296 root cluster : 2
+Data : 15296-62519295
+sectors : 62519296
+cluster_size : 64
+no_of_cluster : 976625 (2 - 976626)
+fat_length 7630 calculated 7630
+set_FAT_info: name from BS used
+get_geometry_from_list_part_aux head=4 nbr=2
+get_geometry_from_list_part_aux head=8 nbr=2
+get_geometry_from_list_part_aux head=16 nbr=2
+get_geometry_from_list_part_aux head=32 nbr=2
+get_geometry_from_list_part_aux head=64 nbr=2
+get_geometry_from_list_part_aux head=128 nbr=2
+Current partition structure:
+check_FAT: Unusual media descriptor (0xf0!=0xf8)
+ 1 * FAT32 LBA               32   0  1 976895   3 16   62519296 [NO NAME]
+
+Warning: Bad starting sector (CHS and LBA don't match)
+
+search_part()
+Disk /dev/mmcblk0 - 32 GB / 29 GiB - CHS 976896 4 16
+FAT32 at 32/0/1
+check_FAT: Unusual media descriptor (0xf0!=0xf8)
+FAT1 : 36-7665
+FAT2 : 7666-15295
+start_rootdir : 15296 root cluster : 2
+Data : 15296-62519295
+sectors : 62519296
+cluster_size : 64
+no_of_cluster : 976625 (2 - 976626)
+fat_length 7630 calculated 7630
+set_FAT_info: name from BS used
+
+FAT32 at 32/0/1
+     FAT32 LBA               32   0  1 976895   3 16   62519296 [NO NAME]
+     FAT32, blocksize=32768, 32 GB / 29 GiB
+get_geometry_from_list_part_aux head=4 nbr=2
+get_geometry_from_list_part_aux head=8 nbr=2
+get_geometry_from_list_part_aux head=16 nbr=2
+get_geometry_from_list_part_aux head=32 nbr=2
+get_geometry_from_list_part_aux head=64 nbr=2
+get_geometry_from_list_part_aux head=128 nbr=2
+Warning: the current number of heads per cylinder is 4 but the correct value may be 128.
+
+Results
+   * FAT32 LBA               32   0  1 976895   3 16   62519296 [NO NAME]
+     FAT32, blocksize=32768, 32 GB / 29 GiB
+
+Hint for advanced users. dmsetup may be used if you prefer to avoid to rewrite the partition table for the moment:
+echo "0 62519296 linear /dev/mmcblk0 2048" | dmsetup create test0
+
+interface_write()
+ 1 * FAT32 LBA               32   0  1 976895   3 16   62519296 [NO NAME]
+
+search_part()
+Disk /dev/mmcblk0 - 32 GB / 29 GiB - CHS 976896 4 16
+FAT32 at 32/0/1
+check_FAT: Unusual media descriptor (0xf0!=0xf8)
+FAT1 : 36-7665
+FAT2 : 7666-15295
+start_rootdir : 15296 root cluster : 2
+Data : 15296-62519295
+sectors : 62519296
+cluster_size : 64
+no_of_cluster : 976625 (2 - 976626)
+fat_length 7630 calculated 7630
+set_FAT_info: name from BS used
+
+FAT32 at 32/0/1
+     FAT32 LBA               32   0  1 976895   3 16   62519296 [NO NAME]
+     FAT32, blocksize=32768, 32 GB / 29 GiB
+FAT12 at 764/0/1
+check_FAT: Unusual media descriptor (0xf8!=0xf0)
+FAT1 : 1-1
+FAT2 : 2-2
+start_rootdir : 3
+Data : 35-638
+sectors : 640
+cluster_size : 4
+no_of_cluster : 151 (2 - 152)
+fat_length 1 calculated 1
+heads/cylinder 64 (FAT) != 4 (HD)
+sect/track 32 (FAT) != 16 (HD)
+
+FAT12 at 764/0/1
+     FAT12                  764   0  1   773   3 16        640 [NO NAME]
+     FAT12, blocksize=2048, 327 KB / 320 KiB
+BAD_RS LBA=280950989 18006
+check_FAT: can't read FAT boot sector
+check_part_i386 failed for partition type 0B
+     FAT32                4389859   0 14 39885931   1  8 2271748619
+This partition ends after the disk limits. (start=280950989, size=2271748619, end=2552699607, disk end=62521344)
+FAT12 at 189533/0/1
+check_FAT: Unusual media descriptor (0xf8!=0xf0)
+FAT1 : 1-2
+FAT2 : 3-4
+start_rootdir : 5
+Data : 37-1404
+sectors : 1408
+cluster_size : 4
+no_of_cluster : 342 (2 - 343)
+fat_length 2 calculated 2
+heads/cylinder 64 (FAT) != 4 (HD)
+sect/track 32 (FAT) != 16 (HD)
+
+FAT12 at 189533/0/1
+     FAT12                189533   0  1 189554   3 16       1408 [NO NAME]
+     FAT12, blocksize=2048, 720 KB / 704 KiB
+FAT12 at 205206/0/1
+check_FAT: Unusual media descriptor (0xf8!=0xf0)
+FAT1 : 1-2
+FAT2 : 3-4
+start_rootdir : 5
+Data : 37-1404
+sectors : 1408
+cluster_size : 4
+no_of_cluster : 342 (2 - 343)
+fat_length 2 calculated 2
+heads/cylinder 64 (FAT) != 4 (HD)
+sect/track 32 (FAT) != 16 (HD)
+
+FAT12 at 205206/0/1
+     FAT12                205206   0  1 205227   3 16       1408 [NO NAME]
+     FAT12, blocksize=2048, 720 KB / 704 KiB
+BAD_RS LBA=2748143866 51497
+check_FAT: can't read FAT boot sector
+check_part_i386 failed for partition type 0C
+     FAT32 LBA            42939747   3 11 109910720   2  6 4286142252
+This partition ends after the disk limits. (start=2748143866, size=4286142252, end=7034286117, disk end=62521344)
+Disk /dev/mmcblk0 - 32 GB / 29 GiB - CHS 976896 4 16
+Check the harddisk size: HD jumpers settings, BIOS detection...
+The harddisk (32 GB / 29 GiB) seems too small! (< 3601 GB / 3354 GiB)
+The following partitions can't be recovered:
+     FAT32                4389859   0 14 39885931   1  8 2271748619
+     FAT32 LBA            42939747   3 11 109910720   2  6 4286142252
+get_geometry_from_list_part_aux head=4 nbr=8
+get_geometry_from_list_part_aux head=8 nbr=6
+get_geometry_from_list_part_aux head=16 nbr=3
+get_geometry_from_list_part_aux head=32 nbr=2
+get_geometry_from_list_part_aux head=64 nbr=2
+get_geometry_from_list_part_aux head=128 nbr=2
+
+Results
+     FAT32 LBA               32   0  1 976895   3 16   62519296 [NO NAME]
+     FAT32, blocksize=32768, 32 GB / 29 GiB
+     FAT12                  764   0  1   773   3 16        640 [NO NAME]
+     FAT12, blocksize=2048, 327 KB / 320 KiB
+     FAT12                189533   0  1 189554   3 16       1408 [NO NAME]
+     FAT12, blocksize=2048, 720 KB / 704 KiB
+     FAT12                205206   0  1 205227   3 16       1408 [NO NAME]
+     FAT12, blocksize=2048, 720 KB / 704 KiB
+
+Hint for advanced users. dmsetup may be used if you prefer to avoid to rewrite the partition table for the moment:
+echo "0 62519296 linear /dev/mmcblk0 2048" | dmsetup create test0
+echo "0 640 linear /dev/mmcblk0 48896" | dmsetup create test1
+echo "0 1408 linear /dev/mmcblk0 12130112" | dmsetup create test2
+echo "0 1408 linear /dev/mmcblk0 13133184" | dmsetup create test3
+
+interface_write()
+ 
+No partition found or selected for recovery
+simulate write!
+
+write_mbr_i386: starting...
+write_all_log_i386: starting...
+No extended partition
+
+Analyse Disk /dev/mmcblk0 - 32 GB / 29 GiB - CHS 976896 4 16
+Geometry from i386 MBR: head=256 sector=63
+BAD_RS LBA=2048 69614
+FAT32 at 32/0/1
+check_FAT: Unusual media descriptor (0xf0!=0xf8)
+Info: size boot_sector 62519296, partition 62519296
+FAT1 : 36-7665
+FAT2 : 7666-15295
+start_rootdir : 15296 root cluster : 2
+Data : 15296-62519295
+sectors : 62519296
+cluster_size : 64
+no_of_cluster : 976625 (2 - 976626)
+fat_length 7630 calculated 7630
+set_FAT_info: name from BS used
+get_geometry_from_list_part_aux head=4 nbr=2
+get_geometry_from_list_part_aux head=8 nbr=2
+get_geometry_from_list_part_aux head=16 nbr=2
+get_geometry_from_list_part_aux head=32 nbr=2
+get_geometry_from_list_part_aux head=64 nbr=2
+get_geometry_from_list_part_aux head=128 nbr=2
+Current partition structure:
+check_FAT: Unusual media descriptor (0xf0!=0xf8)
+ 1 * FAT32 LBA               32   0  1 976895   3 16   62519296 [NO NAME]
+
+Warning: Bad starting sector (CHS and LBA don't match)
+Backup partition structure
+partition_save
+
+search_part()
+Disk /dev/mmcblk0 - 32 GB / 29 GiB - CHS 976896 4 16
+FAT32 at 32/0/1
+check_FAT: Unusual media descriptor (0xf0!=0xf8)
+FAT1 : 36-7665
+FAT2 : 7666-15295
+start_rootdir : 15296 root cluster : 2
+Data : 15296-62519295
+sectors : 62519296
+cluster_size : 64
+no_of_cluster : 976625 (2 - 976626)
+fat_length 7630 calculated 7630
+set_FAT_info: name from BS used
+
+FAT32 at 32/0/1
+     FAT32 LBA               32   0  1 976895   3 16   62519296 [NO NAME]
+     FAT32, blocksize=32768, 32 GB / 29 GiB
+get_geometry_from_list_part_aux head=4 nbr=2
+get_geometry_from_list_part_aux head=8 nbr=2
+get_geometry_from_list_part_aux head=16 nbr=2
+get_geometry_from_list_part_aux head=32 nbr=2
+get_geometry_from_list_part_aux head=64 nbr=2
+get_geometry_from_list_part_aux head=128 nbr=2
+Warning: the current number of heads per cylinder is 4 but the correct value may be 128.
+
+Results
+   * FAT32 LBA               32   0  1 976895   3 16   62519296 [NO NAME]
+     FAT32, blocksize=32768, 32 GB / 29 GiB
+
+Hint for advanced users. dmsetup may be used if you prefer to avoid to rewrite the partition table for the moment:
+echo "0 62519296 linear /dev/mmcblk0 2048" | dmsetup create test0
+
+
+dir_partition inode=0
+   * FAT32 LBA               32   0  1 976895   3 16   62519296 [NO NAME]
+     FAT32, blocksize=32768, 32 GB / 29 GiB
+FAT: cluster=2(0x2), pos=17344
+Directory /
+       4 drwxr-xr-x     0      0         0 24-Jun-2018 23:31 LOST.DIR
+       5 drwxr-xr-x     0      0         0 24-Jun-2018 23:31 .android_secure
+       6 drwxr-xr-x     0      0         0 27-Jun-2018 00:12 Android
+       3 drwxr-xr-x     0      0         0 25-Jun-2018 21:55 System Volume Information
+interface_load
+Disk /dev/mmcblk0 - 32 GB / 29 GiB - CHS 976896 4 16 Mon Jul  2 21:12:42 2018
+ 1 * FAT32 LBA               32   0  1 976895   3 16   62519296
+FAT32 at 32/0/1
+check_FAT: Unusual media descriptor (0xf0!=0xf8)
+Info: size boot_sector 62519296, partition 62519296
+FAT1 : 36-7665
+FAT2 : 7666-15295
+start_rootdir : 15296 root cluster : 2
+Data : 15296-62519295
+sectors : 62519296
+cluster_size : 64
+no_of_cluster : 976625 (2 - 976626)
+fat_length 7630 calculated 7630
+set_FAT_info: name from BS used
+Invalid partition structure.
+
+Analyse Disk /dev/mmcblk0 - 32 GB / 29 GiB - CHS 976896 4 16
+Geometry from i386 MBR: head=256 sector=63
+BAD_RS LBA=2048 69614
+FAT32 at 32/0/1
+check_FAT: Unusual media descriptor (0xf0!=0xf8)
+Info: size boot_sector 62519296, partition 62519296
+FAT1 : 36-7665
+FAT2 : 7666-15295
+start_rootdir : 15296 root cluster : 2
+Data : 15296-62519295
+sectors : 62519296
+cluster_size : 64
+no_of_cluster : 976625 (2 - 976626)
+fat_length 7630 calculated 7630
+set_FAT_info: name from BS used
+get_geometry_from_list_part_aux head=4 nbr=2
+get_geometry_from_list_part_aux head=8 nbr=2
+get_geometry_from_list_part_aux head=16 nbr=2
+get_geometry_from_list_part_aux head=32 nbr=2
+get_geometry_from_list_part_aux head=64 nbr=2
+get_geometry_from_list_part_aux head=128 nbr=2
+Current partition structure:
+check_FAT: Unusual media descriptor (0xf0!=0xf8)
+ 1 * FAT32 LBA               32   0  1 976895   3 16   62519296 [NO NAME]
+
+Warning: Bad starting sector (CHS and LBA don't match)
+Backup partition structure
+partition_save
+
+search_part()
+Disk /dev/mmcblk0 - 32 GB / 29 GiB - CHS 976896 4 16
+FAT32 at 32/0/1
+check_FAT: Unusual media descriptor (0xf0!=0xf8)
+FAT1 : 36-7665
+FAT2 : 7666-15295
+start_rootdir : 15296 root cluster : 2
+Data : 15296-62519295
+sectors : 62519296
+cluster_size : 64
+no_of_cluster : 976625 (2 - 976626)
+fat_length 7630 calculated 7630
+set_FAT_info: name from BS used
+
+FAT32 at 32/0/1
+     FAT32 LBA               32   0  1 976895   3 16   62519296 [NO NAME]
+     FAT32, blocksize=32768, 32 GB / 29 GiB
+get_geometry_from_list_part_aux head=4 nbr=2
+get_geometry_from_list_part_aux head=8 nbr=2
+get_geometry_from_list_part_aux head=16 nbr=2
+get_geometry_from_list_part_aux head=32 nbr=2
+get_geometry_from_list_part_aux head=64 nbr=2
+get_geometry_from_list_part_aux head=128 nbr=2
+Warning: the current number of heads per cylinder is 4 but the correct value may be 128.
+
+Results
+   * FAT32 LBA               32   0  1 976895   3 16   62519296 [NO NAME]
+     FAT32, blocksize=32768, 32 GB / 29 GiB
+
+Hint for advanced users. dmsetup may be used if you prefer to avoid to rewrite the partition table for the moment:
+echo "0 62519296 linear /dev/mmcblk0 2048" | dmsetup create test0
+
+interface_write()
+ 1 * FAT32 LBA               32   0  1 976895   3 16   62519296 [NO NAME]
+
+search_part()
+Disk /dev/mmcblk0 - 32 GB / 29 GiB - CHS 976896 4 16
+FAT32 at 32/0/1
+check_FAT: Unusual media descriptor (0xf0!=0xf8)
+FAT1 : 36-7665
+FAT2 : 7666-15295
+start_rootdir : 15296 root cluster : 2
+Data : 15296-62519295
+sectors : 62519296
+cluster_size : 64
+no_of_cluster : 976625 (2 - 976626)
+fat_length 7630 calculated 7630
+set_FAT_info: name from BS used
+
+FAT32 at 32/0/1
+     FAT32 LBA               32   0  1 976895   3 16   62519296 [NO NAME]
+     FAT32, blocksize=32768, 32 GB / 29 GiB
+FAT12 at 764/0/1
+check_FAT: Unusual media descriptor (0xf8!=0xf0)
+FAT1 : 1-1
+FAT2 : 2-2
+start_rootdir : 3
+Data : 35-638
+sectors : 640
+cluster_size : 4
+no_of_cluster : 151 (2 - 152)
+fat_length 1 calculated 1
+heads/cylinder 64 (FAT) != 4 (HD)
+sect/track 32 (FAT) != 16 (HD)
+
+FAT12 at 764/0/1
+     FAT12                  764   0  1   773   3 16        640 [NO NAME]
+     FAT12, blocksize=2048, 327 KB / 320 KiB
+BAD_RS LBA=280950989 18006
+check_FAT: can't read FAT boot sector
+check_part_i386 failed for partition type 0B
+     FAT32                4389859   0 14 39885931   1  8 2271748619
+This partition ends after the disk limits. (start=280950989, size=2271748619, end=2552699607, disk end=62521344)
+FAT12 at 189533/0/1
+check_FAT: Unusual media descriptor (0xf8!=0xf0)
+FAT1 : 1-2
+FAT2 : 3-4
+start_rootdir : 5
+Data : 37-1404
+sectors : 1408
+cluster_size : 4
+no_of_cluster : 342 (2 - 343)
+fat_length 2 calculated 2
+heads/cylinder 64 (FAT) != 4 (HD)
+sect/track 32 (FAT) != 16 (HD)
+
+FAT12 at 189533/0/1
+     FAT12                189533   0  1 189554   3 16       1408 [NO NAME]
+     FAT12, blocksize=2048, 720 KB / 704 KiB
+FAT12 at 205206/0/1
+check_FAT: Unusual media descriptor (0xf8!=0xf0)
+FAT1 : 1-2
+FAT2 : 3-4
+start_rootdir : 5
+Data : 37-1404
+sectors : 1408
+cluster_size : 4
+no_of_cluster : 342 (2 - 343)
+fat_length 2 calculated 2
+heads/cylinder 64 (FAT) != 4 (HD)
+sect/track 32 (FAT) != 16 (HD)
+
+FAT12 at 205206/0/1
+     FAT12                205206   0  1 205227   3 16       1408 [NO NAME]
+     FAT12, blocksize=2048, 720 KB / 704 KiB
+BAD_RS LBA=2748143866 51497
+check_FAT: can't read FAT boot sector
+check_part_i386 failed for partition type 0C
+     FAT32 LBA            42939747   3 11 109910720   2  6 4286142252
+This partition ends after the disk limits. (start=2748143866, size=4286142252, end=7034286117, disk end=62521344)
+Disk /dev/mmcblk0 - 32 GB / 29 GiB - CHS 976896 4 16
+Check the harddisk size: HD jumpers settings, BIOS detection...
+The harddisk (32 GB / 29 GiB) seems too small! (< 3601 GB / 3354 GiB)
+The following partitions can't be recovered:
+     FAT32                4389859   0 14 39885931   1  8 2271748619
+     FAT32 LBA            42939747   3 11 109910720   2  6 4286142252
+get_geometry_from_list_part_aux head=4 nbr=8
+get_geometry_from_list_part_aux head=8 nbr=6
+get_geometry_from_list_part_aux head=16 nbr=3
+get_geometry_from_list_part_aux head=32 nbr=2
+get_geometry_from_list_part_aux head=64 nbr=2
+get_geometry_from_list_part_aux head=128 nbr=2
+
+Results
+     FAT32 LBA               32   0  1 976895   3 16   62519296 [NO NAME]
+     FAT32, blocksize=32768, 32 GB / 29 GiB
+     FAT12                  764   0  1   773   3 16        640 [NO NAME]
+     FAT12, blocksize=2048, 327 KB / 320 KiB
+     FAT12                189533   0  1 189554   3 16       1408 [NO NAME]
+     FAT12, blocksize=2048, 720 KB / 704 KiB
+     FAT12                205206   0  1 205227   3 16       1408 [NO NAME]
+     FAT12, blocksize=2048, 720 KB / 704 KiB
+
+Hint for advanced users. dmsetup may be used if you prefer to avoid to rewrite the partition table for the moment:
+echo "0 62519296 linear /dev/mmcblk0 2048" | dmsetup create test0
+echo "0 640 linear /dev/mmcblk0 48896" | dmsetup create test1
+echo "0 1408 linear /dev/mmcblk0 12130112" | dmsetup create test2
+echo "0 1408 linear /dev/mmcblk0 13133184" | dmsetup create test3
+SIGHUP detected! TestDisk has been killed.
